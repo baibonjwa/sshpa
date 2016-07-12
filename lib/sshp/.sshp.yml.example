@@ -1,0 +1,14 @@
+# Example
+# ------------------------------
+# hostname1:
+#   username: guest1
+#   password: password1
+#   host: domain1.com
+#
+# hostname2:
+#   username: guest2
+#   password: password2
+#   host: domain2.com
+# ------------------------------
+#
+# Then you can run 'sshp hostname1' to ssh login without password
