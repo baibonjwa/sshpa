@@ -1,10 +1,12 @@
-# sshp
+# sshpa
 
-This is a management tool for ssh login server base on sshpass.
+[![Gem Version](https://badge.fury.io/rb/sshpa.svg)](https://badge.fury.io/rb/sshpa)
+
+This is a management tool for logging into server base on sshpass.
 
 ## Installation
 
-First you need install sshpass lib to your system.
+First you need to install sshpass lib to your system.
 
     //Installing on Ubuntu
     apt-get install sshpass
@@ -14,29 +16,29 @@ First you need install sshpass lib to your system.
 
 Then install it as:
 
-    $ gem install sshp
+    $ gem install sshpa
 
 
 ## Usage
 
-First you need run init script.
+First you need to run init script.
 
-    $ sshp init
+    $ sshpa init
 
-Then edit the .sshp.yml on your home path.
+Then edit the .sshpa.yml on your home path.
 
-    $ vi ~/.sshp.yml
+    $ vi ~/.sshpa.yml
 
 Finally run command
 
-    $ sshp hostname1
+    $ sshpa hostname1 //hostname1 is configured in .sshpa.yml
 
-Login success!!
+Login successful!!
 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/happybai/sshp.
+Bug reports and pull requests are welcome on GitHub at https://github.com/happybai/sshpa.
 
 
 ## License

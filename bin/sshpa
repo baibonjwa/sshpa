@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "sshp"
+require "sshpa"
 
-Sshp.hi(ARGV[0])
+Sshpa.hi(ARGV[0])

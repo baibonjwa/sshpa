@@ -1,3 +1,3 @@
-module Sshp
+module Sshpa
   VERSION = "0.1.0"
 end

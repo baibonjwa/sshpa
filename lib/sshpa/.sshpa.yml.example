@@ -11,4 +11,4 @@
 #   host: domain2.com
 # ------------------------------
 #
-# Then you can run 'sshp hostname1' to ssh login without password
+# Then you can run 'sshpa hostname1' to ssh login without password
