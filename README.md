@@ -9,7 +9,7 @@ This is a management tool for logging into server base on sshpass.
 First you need to install sshpass lib to your system.
 
     //Installing on Ubuntu
-    apt-get install sshpass
+    sudo apt-get install sshpass
 
     //Installing on Mac
     brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
@@ -34,6 +34,12 @@ Finally run command
     $ sshpa hostname1 //hostname1 is configured in .sshpa.yml
 
 Login successful!!
+
+
+## TODOLIST
+- [ ] Make 'sshpa add' command
+- [ ] Make 'sshpa list' command
+- [ ] Make login more security
 
 
 ## Contributing
