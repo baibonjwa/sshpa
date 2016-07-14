@@ -36,6 +36,13 @@ module Sshpa
         File.write(ENV['HOME'] + '/.sshpa.yml', output)
         puts "The #{args[1]} has been added successfully"
       end
+    when 'remove'
+      file = open(ENV['HOME'] + '/.sshpa.yml').read
+      config = YAML.load(file)
+      puts config.delete(args[1]) { |el| "#{el} not found" }
+      output = YAML.dump config
+      File.write(ENV['HOME'] + '/.sshpa.yml', output)
+      puts "The #{args[1]} has been removed successfully"
     else
       if File.exist?(ENV['HOME']+'/.sshpa.yml')
         file = open(ENV['HOME']+'/.sshpa.yml').read
