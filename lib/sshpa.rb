@@ -11,6 +11,13 @@ module Sshpa
         system 'echo ".sshpa.yml file has been created on $HOME."'
         system "cp #{File.expand_path(File.dirname(__FILE__))}/sshpa/.sshpa.yml.example $HOME/.sshpa.yml"
       end
+    when 'list'
+      if File.exist?(ENV['HOME']+'/.sshpa.yml')
+        file = open(ENV['HOME']+'/.sshpa.yml').read
+        puts file.to_yaml
+      else
+        puts '.sshpa.yml didn\'t exists.\n Please run \'sshpa init\' first.'
+      end
     else
       if File.exist?(ENV['HOME']+'/.sshpa.yml')
         file = open(ENV['HOME']+'/.sshpa.yml').read
