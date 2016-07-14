@@ -37,8 +37,9 @@ Login successful!!
 
 
 ## TODOLIST
-- [ ] Make 'sshpa add' command
-- [ ] Make 'sshpa list' command
+- [x] Make 'sshpa add' command
+- [x] Make 'sshpa remove' command
+- [x] Make 'sshpa list' command
 - [ ] Make login more security
 
 
