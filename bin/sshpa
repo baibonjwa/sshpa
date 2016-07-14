@@ -3,4 +3,4 @@
 require "bundler/setup"
 require "sshpa"
 
-Sshpa.hi(ARGV[0])
+Sshpa.hi(ARGV[0], ARGV[1], ARGV[2], ARGV[3], ARGV[4])

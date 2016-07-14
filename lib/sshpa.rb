@@ -18,6 +18,24 @@ module Sshpa
       else
         puts '.sshpa.yml didn\'t exists.\n Please run \'sshpa init\' first.'
       end
+    when 'add'
+      if args.length != 5
+        puts 'The number of argument is wrong.'
+      else
+        file = open(ENV['HOME'] + '/.sshpa.yml').read
+        config = YAML.load(file)
+        key = args[1].to_s
+        config[key] = {}
+        config[key]['username'] = args[2]
+        puts config
+        config[key]['password'] = args[3]
+        puts config
+        config[key]['host'] = args[4]
+        puts config
+        output = YAML.dump config
+        File.write(ENV['HOME'] + '/.sshpa.yml', output)
+        puts "The #{args[1]} has been added successfully"
+      end
     else
       if File.exist?(ENV['HOME']+'/.sshpa.yml')
         file = open(ENV['HOME']+'/.sshpa.yml').read
