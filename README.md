@@ -25,17 +25,29 @@ First you need to run init script.
 
     $ sshpa init
 
-Then edit the .sshpa.yml on your home path.
+Then run 'sshpa add'.
+
+    $ sshpa add [alias] [username] [password] [host]
+    
+Or edit the .sshpa.yml on your home path by yourself.
 
     $ vi ~/.sshpa.yml
 
 Finally run command
 
-    $ sshpa hostname1 //hostname1 is configured in .sshpa.yml
+    $ sshpa [alias] //[alias] is configured in the .sshpa.yml
 
 Login successful!!
 
+You also run 'sshpa list' to see the details of your host list.
 
+    $ sshpa list
+    
+You can remove host by runing 'sshpa remove'.
+
+    $ sshpa remove [alias]
+    
+    
 ## TODOLIST
 - [x] Make 'sshpa add' command
 - [x] Make 'sshpa remove' command
