@@ -4,6 +4,10 @@ require 'yaml'
 module Sshpa
   def self.hi *args
     case args[0]
+    when '-v'
+      puts "Sshpa version is #{VERSION}"
+    when '--version'
+      puts "Sshpa version is #{VERSION}"
     when 'init'
       if File.exist?(ENV['HOME']+'/.sshpa.yml')
         system 'echo ".sshpa.yml already exist."'
@@ -56,7 +60,7 @@ module Sshpa
           puts '.sshpa.yml didn\'t exists.\n Please run \'sshpa init\' first.'
         end
       rescue
-        puts 'Alias didn\'t exists'
+        puts 'Alias didn\'t exists or argument is not correct'
       end
     end
   end
