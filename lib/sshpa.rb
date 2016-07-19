@@ -48,7 +48,7 @@ module Sshpa
         if File.exist?(ENV['HOME']+'/.sshpa.yml')
           file = open(ENV['HOME']+'/.sshpa.yml').read
           config = YAML.load(file)[args[0]]
-          command = "sshpass -e ssh #{config['username']}\@#{config['host']}"
+          command = "sshpass -e ssh -o StrictHostKeyChecking=no #{config['username']}\@#{config['host']}"
           puts command
           ENV['SSHPASS'] = config['password']
           system command
