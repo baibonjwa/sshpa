@@ -44,14 +44,19 @@ module Sshpa
       File.write(ENV['HOME'] + '/.sshpa.yml', output)
       puts "The #{args[1]} has been removed successfully"
     else
-      if File.exist?(ENV['HOME']+'/.sshpa.yml')
-        file = open(ENV['HOME']+'/.sshpa.yml').read
-        config = YAML.load(file)[args[0]]
-        command = "sshpass -p #{config['password']} ssh #{config['username']}\@#{config['host']}"
-        puts command
-        system command
-      else
-        puts '.sshpa.yml didn\'t exists.\n Please run \'sshpa init\' first.'
+      begin
+        if File.exist?(ENV['HOME']+'/.sshpa.yml')
+          file = open(ENV['HOME']+'/.sshpa.yml').read
+          config = YAML.load(file)[args[0]]
+          command = "sshpass -e ssh #{config['username']}\@#{config['host']}"
+          puts command
+          ENV['SSHPASS'] = config['password']
+          system command
+        else
+          puts '.sshpa.yml didn\'t exists.\n Please run \'sshpa init\' first.'
+        end
+      rescue
+        puts 'Alias didn\'t exists'
       end
     end
   end
