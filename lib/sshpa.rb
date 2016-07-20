@@ -1,5 +1,6 @@
 require "sshpa/version"
 require 'yaml'
+require 'optparse'
 
 module Sshpa
   def self.hi *args

@@ -49,7 +49,7 @@ You can remove host by runing 'sshpa remove'.
 
 
 ## TODOLIST
-- [x] Make login more security
+- [ ] Intergrate ssh-forever
 
 
 ## Contributing
