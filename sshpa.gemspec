@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/happybai/sshpa"
   spec.license       = "MIT"
 
-  spec.files         = ['lib/sshpa.rb', 'lib/sshpa/version.rb']
+  spec.files         = ['lib/sshpa.rb', 'lib/sshpa/version.rb', 'bin/sshpa']
   spec.executables   = spec.files.grep(%r{^bin/*}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 end

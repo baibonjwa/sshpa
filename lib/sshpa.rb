@@ -92,30 +92,5 @@ module Sshpa
         end
       end
     end
-
-    #case args[0]
-    #when 'remove'
-      #file = open(ENV['HOME'] + '/.sshpa.yml').read
-      #config = YAML.load(file)
-      #puts config.delete(args[1]) { |el| "#{el} not found" }
-      #output = YAML.dump config
-      #File.write(ENV['HOME'] + '/.sshpa.yml', output)
-      #puts "The #{args[1]} has been removed successfully"
-    #else
-      #begin
-        #if File.exist?(ENV['HOME']+'/.sshpa.yml')
-          #file = open(ENV['HOME']+'/.sshpa.yml').read
-          #config = YAML.load(file)[args[0]]
-          #command = "sshpass -e ssh -o StrictHostKeyChecking=no #{config['username']}\@#{config['host']}"
-          #puts command
-          #ENV['SSHPASS'] = config['password']
-          #system command
-        #else
-          #puts '.sshpa.yml didn\'t exists.\n Please run \'sshpa init\' first.'
-        #end
-      #rescue
-        #puts 'Alias didn\'t exists or argument is not correct'
-      #end
-    #end
   end
 end
