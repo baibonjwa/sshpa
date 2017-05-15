@@ -1,4 +1,4 @@
-require "./lib/sshpa/version.rb"
+require "sshpa/version"
 require 'yaml'
 require 'optparse'
 
