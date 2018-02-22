@@ -32,38 +32,38 @@ module Sshpa
     case ARGV[0]
     when "add"
       puts "call start on options #{options.inspect}"
-      if args.length != 5
+      if ARGV.length != 5
         puts 'The number of argument is wrong.'
       else
         file = open(ENV['HOME'] + '/.sshpa.yml').read
         config = YAML.load(file)
-        key = args[1].to_s
+        key = ARGV[1].to_s
         config[key] = {}
-        config[key]['username'] = args[2]
+        config[key]['username'] = ARGV[2]
         puts config
-        config[key]['password'] = args[3]
+        config[key]['password'] = ARGV[3]
         puts config
-        config[key]['host'] = args[4]
+        config[key]['host'] = ARGV[4]
         puts config
         output = YAML.dump config
         File.write(ENV['HOME'] + '/.sshpa.yml', output)
-        puts "The #{args[1]} has been added successfully"
+        puts "The #{ARGV[1]} has been added successfully"
       end
     when "list"
-      puts "call stop on options #{options.inspect}"
       if File.exist?("#{ENV['HOME']}/.sshpa.yml")
+        YAML.load_file(ENV['HOME']+'/.sshpa.yml')
         file = open(ENV['HOME']+'/.sshpa.yml').read
-        puts file.to_yaml
+        puts file
       else
         puts '.sshpa.yml didn\'t exists.\n Please run \'sshpa init\' first.'
       end
     when "remove"
       file = open(ENV['HOME'] + '/.sshpa.yml').read
       config = YAML.load(file)
-      puts config.delete(args[1]) { |el| "#{el} not found" }
+      puts config.delete(ARGV[1]) { |el| "#{el} not found" }
       output = YAML.dump config
       File.write(ENV['HOME'] + '/.sshpa.yml', output)
-      puts "The #{args[1]} has been removed successfully"
+      puts "The #{ARGV[1]} has been removed successfully"
     when "init"
       if File.exist?(ENV['HOME']+'/.sshpa.yml')
         system 'echo ".sshpa.yml already exist."'
