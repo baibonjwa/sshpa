@@ -48,10 +48,6 @@ You can remove host by runing 'sshpa remove'.
     $ sshpa remove [alias]
 
 
-## TODOLIST
-- [ ] Intergrate ssh-forever
-
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/happybai/sshpa.
